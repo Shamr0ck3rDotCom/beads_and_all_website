@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Beads & All</title>
+    <meta name="description" content="Get in touch with Beads & All for general enquiries and questions.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">Beads &amp; All</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html">Enquire</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Page intro image + heading -->
+        <section class="page-header">
+            <img src="images/Gemini_Generated_Image_1e9t941e9t941e9t.jpeg" alt="A wrapped parcel ready to be sent to a customer">
+            <h1>Contact Us</h1>
+            <p>Have a general question? Send us a message below.</p>
+        </section>
+
+        <!-- Map and contact details -->
+        <section class="contact-info">
+
+            <div class="map">
+                <!-- NOTE: Beads & All operates from a single home-based location.
+                     Embedded map will show this location; see README for details. -->
+                <iframe
+                    title="Map showing the Beads & All location in the Strand area"
+                    src="https://www.google.com/maps?q=Strand,Western+Cape&output=embed"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="contact-details">
+                <h2>Get in touch</h2>
+                <p><strong>Email:</strong> hello@beadsandall.co.za</p>
+                <p><strong>Phone:</strong> 071 234 5678</p>
+                <p><strong>Location:</strong> Strand, Western Cape, South Africa</p>
+                <p><strong>Hours:</strong> By appointment / online enquiry only</p>
+            </div>
+
+        </section>
+
+        <!-- General contact form -->
+        <section class="contact-form">
+            <h2>Send a message</h2>
+            <form action="#" method="post">
+
+                <div class="form-group">
+                    <label for="c-name">Full name</label>
+                    <input type="text" id="c-name" name="c-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="c-email">Email address</label>
+                    <input type="email" id="c-email" name="c-email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="c-subject">Type of message</label>
+                    <select id="c-subject" name="c-subject" required>
+                        <option value="">-- Please select --</option>
+                        <option value="general">General question</option>
+                        <option value="order-status">Order status</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="c-message">Message</label>
+                    <textarea id="c-message" name="c-message" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Send message</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html">Enquire</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p>&copy; 2026 Beads &amp; All. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
