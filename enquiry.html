@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enquire | Beads & All</title>
-    <meta name="description" content="Submit a custom order enquiry to Beads & All for handmade beaded jewellery.">
+    <title>Request a Custom Beaded Jewellery Order | Beads &amp; All</title>
+    <link rel="canonical" href="https://www.beadsandall.co.za/enquiry.html">
+    <meta name="description" content="Enquire about a custom beaded jewellery order from Beads &amp; All — earrings, prayer beads, bookmarkers and bangles made to your specifications.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,28 +29,32 @@
 
         <!-- Page intro image + heading -->
         <section class="page-header">
-            <img src="images/Gemini_Generated_Image_1e9t941e9t941e9t.jpeg" alt="Beads and thread laid out ready for a custom order">
+            <!-- Make sure the alt text describes the photo you actually use -->
+            <img src="images/enquiry-header-beads.jpeg" alt="Beads and thread laid out ready for a custom order">
             <h1>Enquire about a custom order</h1>
             <p>Tell us what you're looking for and we'll get back to you with pricing and availability.</p>
         </section>
 
         <!-- Custom order enquiry form -->
         <section class="enquiry-form">
-            <form action="#" method="post">
+            <form id="enquiryForm" action="#" method="post" novalidate>
 
                 <div class="form-group">
                     <label for="name">Full name</label>
                     <input type="text" id="name" name="name" required>
+                    <span class="error-message" id="nameError"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="emailError"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone number</label>
                     <input type="tel" id="phone" name="phone">
+                    <span class="error-message" id="phoneError"></span>
                 </div>
 
                 <div class="form-group">
@@ -62,16 +67,27 @@
                         <option value="bangle">Bangle</option>
                         <option value="other">Other / not sure</option>
                     </select>
+                    <span class="error-message" id="itemTypeError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="50" value="1" required>
+                    <span class="error-message" id="quantityError"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="details">Tell us about your custom order</label>
                     <textarea id="details" name="details" rows="6" required></textarea>
+                    <span class="error-message" id="detailsError"></span>
                 </div>
 
                 <button type="submit" class="btn">Submit enquiry</button>
 
             </form>
+
+            <!-- JavaScript will show the cost and availability response here -->
+            <div id="enquiryResponse" class="enquiry-response" aria-live="polite"></div>
         </section>
 
     </main>
@@ -92,5 +108,6 @@
         <p>&copy; 2026 Beads &amp; All. All rights reserved.</p>
     </footer>
 
+    <script src="js/main.js" defer></script>
 </body>
 </html>
