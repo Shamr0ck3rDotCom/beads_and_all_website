@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Beads & All</title>
-    <meta name="description" content="Browse a gallery of handmade beaded jewellery created by Beads & All.">
+    <title>Handmade Beaded Jewellery Gallery | Beads &amp; All</title>
+    <link rel="canonical" href="https://www.beadsandall.co.za/gallery.html">
+    <meta name="description" content="Browse our gallery of handmade beaded jewellery — earrings, prayer beads, bangles and bookmarkers crafted by Beads &amp; All in Strand.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,48 +29,50 @@
 
         <!-- Page intro image + heading -->
         <section class="page-header">
-            <img src="images/Gemini_Generated_Image_1e9t941e9t941e9t.jpeg" alt="A woman sitting with handmade prayerbeads">
+            <!-- Update the alt text so it describes what is actually in this photo -->
+            <img src="images/woman-with-prayer-beads-hero.jpeg" alt="A woman sitting with handmade prayer beads">
             <h1>Gallery</h1>
             <p>A look at some of our past custom pieces.</p>
         </section>
 
-        <!-- Gallery grid: 12 image placeholders representing past work -->
+        <!-- Gallery grid: 12 images of past work -->
         <section class="gallery-grid">
             <figure>
-                <img src="images/earrings in orange and cream.jpeg" alt="Beaded earrings in orange and cream">
+                <img class="gallery-img" src="images/orange-cream-beaded-earrings.jpeg" loading="lazy" alt="Beaded earrings in orange and cream">
             </figure>
             <figure>
-                <img src="images/bracelet with black and gold.jpg" alt="Beaded bracelet with black and gold beads">
+                <img class="gallery-img" src="images/black-gold-beaded-bracelet.jpg" loading="lazy" alt="Beaded bracelet with black and gold beads">
             </figure>
             <figure>
-                <img src="images/Palestine Colour Prayer Beads.webp" alt="Palestine colour prayer beads with Gaza tassle">
+                <img class="gallery-img" src="images/palestine-colour-prayer-beads.webp" loading="lazy" alt="Palestine colour prayer beads with a tassel">
             </figure>
             <figure>
-                <img src="images/beaded bookmark in black and red.jpeg" alt="Beaded bookmarker in red and black">
+                <img class="gallery-img" src="images/black-red-beaded-bookmarker.jpeg" loading="lazy" alt="Beaded bookmarker in red and black">
             </figure>
             <figure>
-                <img src="images/IMG_4763-scaled.jpg" alt="Pair of drop earrings with black beads">
+                <img class="gallery-img" src="images/black-beaded-drop-earrings.jpg" loading="lazy" alt="Pair of drop earrings with black beads">
             </figure>
             <figure>
-                <img src="images/Pastel colour bracelet.webp" alt="Stack of beaded bangles in pastel colours">
+                <img class="gallery-img" src="images/pastel-beaded-bracelets.webp" loading="lazy" alt="Stack of beaded bracelets in pastel colours">
             </figure>
             <figure>
-                <img src="images/beaded choker necklace.webp" alt="Beaded choker necklace">
+                <img class="gallery-img" src="images/beaded-choker-necklace.webp" loading="lazy" alt="Handmade beaded choker necklace">
             </figure>
             <figure>
-                <img src="images/Custom beaded keychain.webp" alt="Custom beaded keyring">
+                <img class="gallery-img" src="images/custom-beaded-keychain.webp" loading="lazy" alt="Custom beaded keychain">
             </figure>
             <figure>
-                <img src="images/beaded hoop earrings.jpeg" alt="Beaded hoop earrings">
+                <img class="gallery-img" src="images/beaded-hoop-earrings.jpeg" loading="lazy" alt="Beaded hoop earrings">
             </figure>
             <figure>
-                <img src="images/dark wood prayer beads.webp" alt="Prayer beads in dark wood">
+                <img class="gallery-img" src="images/dark-wood-prayer-beads.webp" loading="lazy" alt="Prayer beads in dark wood">
             </figure>
             <figure>
-                <img src="images/beaded bookmark in black and red.jpeg" alt="Beaded bookmarker in red and black">
+                <!-- TODO: this was a duplicate of the bookmarker above. Swap in a different photo and a matching alt -->
+                <img class="gallery-img" src="images/beaded-bookmarker.webp" loading="lazy" alt="Beaded bookmarker">
             </figure>
             <figure>
-                <img src="images/gold brass and gold pearl handchain.avif" alt="Gold and brass handchain with pearls">
+                <img class="gallery-img" src="images/gold-brass-pearl-handchain.avif" loading="lazy" alt="Gold and brass handchain with pearls">
             </figure>
         </section>
 
@@ -91,5 +94,6 @@
         <p>&copy; 2026 Beads &amp; All. All rights reserved.</p>
     </footer>
 
+    <script src="js/main.js" defer></script>
 </body>
 </html>
