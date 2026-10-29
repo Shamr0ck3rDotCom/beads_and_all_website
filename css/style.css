@@ -772,10 +772,6 @@ footer p{
         padding: 1.5rem 1.2rem;
     }
 
-    .map iframe{
-        min-height: 220px;
-    }
-
     .btn{
         width: 100%;
         text-align: center;
@@ -808,4 +804,11 @@ footer p{
 
 .enquiry-response:empty {
     display: none;
+}
+
+#map {
+    width: 100%;
+    height: 350px;
+    border-radius: 6px;
+    border: 1px solid var(--gold);
 }

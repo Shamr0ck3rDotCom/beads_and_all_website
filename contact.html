@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Beads & All</title>
-    <meta name="description" content="Get in touch with Beads & All for general enquiries and questions.">
+    <title>Contact Beads &amp; All | Handmade Jewellery Maker in Strand</title>
+    <link rel="canonical" href="https://www.beadsandall.co.za/contact.html">
+    <meta name="description" content="Contact Beads &amp; All in Strand, Western Cape, for questions about our handmade beaded jewellery, or to follow up on an existing order.">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet (interactive map library) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
 
@@ -28,7 +32,8 @@
 
         <!-- Page intro image + heading -->
         <section class="page-header">
-            <img src="images/Gemini_Generated_Image_1e9t941e9t941e9t.jpeg" alt="A wrapped parcel ready to be sent to a customer">
+            <!-- Make sure the alt text describes the photo you actually use -->
+            <img src="images/contact-header-parcel.jpeg" alt="A wrapped parcel ready to be sent to a customer">
             <h1>Contact Us</h1>
             <p>Have a general question? Send us a message below.</p>
         </section>
@@ -37,13 +42,8 @@
         <section class="contact-info">
 
             <div class="map">
-                <!-- NOTE: Beads & All operates from a single home-based location.
-                     Embedded map will show this location; see README for details. -->
-                <iframe
-                    title="Map showing the Beads & All location in the Strand area"
-                    src="https://www.google.com/maps?q=Strand,Western+Cape&output=embed"
-                    loading="lazy">
-                </iframe>
+                <!-- Interactive Leaflet map, built in js/main.js -->
+                <div id="map" role="region" aria-label="Map showing the Beads &amp; All location in the Strand area"></div>
             </div>
 
             <div class="contact-details">
@@ -59,16 +59,18 @@
         <!-- General contact form -->
         <section class="contact-form">
             <h2>Send a message</h2>
-            <form action="#" method="post">
+            <form id="contactForm" action="#" method="post" novalidate>
 
                 <div class="form-group">
                     <label for="c-name">Full name</label>
                     <input type="text" id="c-name" name="c-name" required>
+                    <span class="error-message" id="cNameError"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="c-email">Email address</label>
                     <input type="email" id="c-email" name="c-email" required>
+                    <span class="error-message" id="cEmailError"></span>
                 </div>
 
                 <div class="form-group">
@@ -80,16 +82,21 @@
                         <option value="feedback">Feedback</option>
                         <option value="other">Other</option>
                     </select>
+                    <span class="error-message" id="cSubjectError"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="c-message">Message</label>
                     <textarea id="c-message" name="c-message" rows="6" required></textarea>
+                    <span class="error-message" id="cMessageError"></span>
                 </div>
 
                 <button type="submit" class="btn">Send message</button>
 
             </form>
+
+            <!-- JavaScript shows a confirmation here before opening the email -->
+            <div id="contactStatus" class="enquiry-response" aria-live="polite"></div>
         </section>
 
     </main>
@@ -110,5 +117,8 @@
         <p>&copy; 2026 Beads &amp; All. All rights reserved.</p>
     </footer>
 
+    <!-- Leaflet must load before main.js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
