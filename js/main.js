@@ -284,4 +284,24 @@ if ("IntersectionObserver" in window && revealTargets.length > 0) {
     });
 }
 
+// ===== Interactive map (contact page only) =====
+const mapEl = document.getElementById("map");
+
+if (mapEl && typeof L !== "undefined") {
+    // Strand, Western Cape (approximate area, not a home address)
+    const strand = [-34.1167, 18.8333];
+
+    const map = L.map("map").setView(strand, 13);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap contributors"
+    }).addTo(map);
+
+    L.marker(strand)
+        .addTo(map)
+        .bindPopup("<strong>Beads &amp; All</strong><br>Strand, Western Cape")
+        .openPopup();
+}
+
     
