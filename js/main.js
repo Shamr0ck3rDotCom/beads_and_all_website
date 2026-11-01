@@ -231,4 +231,26 @@ if (filterButtons.length > 0 && galleryFigures.length > 0) {
     searchInput.addEventListener("input", applyFilters);
 }
 
+// ===== FAQ accordion =====
+const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+accordionHeaders.forEach(function (header) {
+    header.addEventListener("click", function () {
+        const panel = document.getElementById(header.getAttribute("aria-controls"));
+        const isOpen = header.getAttribute("aria-expanded") === "true";
+
+        // Close every other panel first (only one open at a time)
+        accordionHeaders.forEach(function (other) {
+            other.setAttribute("aria-expanded", "false");
+            document.getElementById(other.getAttribute("aria-controls")).style.maxHeight = null;
+        });
+
+        // Open this one, unless it was already open
+        if (!isOpen) {
+            header.setAttribute("aria-expanded", "true");
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+});
+
     
