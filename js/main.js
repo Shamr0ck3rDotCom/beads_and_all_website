@@ -128,3 +128,107 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+
+// ===== Gallery lightbox =====
+const galleryImages = document.querySelectorAll(".gallery-img");
+const lightbox = document.getElementById("lightbox");
+
+if (galleryImages.length > 0 && lightbox) {
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    let currentIndex = 0;
+
+    function visibleImages() {
+        return Array.from(galleryImages).filter(function (img) {
+            return !img.closest("figure").hidden;
+        });
+    }
+
+    function showImage(index) {
+        const list = visibleImages();
+        currentIndex = (index + list.length) % list.length;
+        const img = list[currentIndex];
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = img.alt;
+    }
+
+    function openLightbox(index) {
+        showImage(index);
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+    }
+
+    galleryImages.forEach(function (img) {
+        img.addEventListener("click", function () {
+            openLightbox(visibleImages().indexOf(img));
+        });
+    });
+
+    document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+    document.getElementById("lightboxPrev").addEventListener("click", function () {
+        showImage(currentIndex - 1);
+    });
+    document.getElementById("lightboxNext").addEventListener("click", function () {
+        showImage(currentIndex + 1);
+    });
+
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (!lightbox.classList.contains("active")) return;
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+        if (event.key === "ArrowRight") showImage(currentIndex + 1);
+    });
+}
+
+// ===== Gallery filter + search =====
+const filterButtons = document.querySelectorAll(".filter-btn");
+const searchInput = document.getElementById("gallerySearch");
+const galleryFigures = document.querySelectorAll(".gallery-grid figure");
+const noResults = document.getElementById("noResults");
+
+if (filterButtons.length > 0 && galleryFigures.length > 0) {
+    let activeFilter = "all";
+
+    function applyFilters() {
+        const term = searchInput.value.trim().toLowerCase();
+        let shown = 0;
+
+        galleryFigures.forEach(function (figure) {
+            const category = figure.dataset.category;
+            const altText = figure.querySelector("img").alt.toLowerCase();
+
+            const matchesCategory = activeFilter === "all" || category === activeFilter;
+            const matchesSearch = term === "" || altText.includes(term);
+
+            figure.hidden = !(matchesCategory && matchesSearch);
+            if (!figure.hidden) shown++;
+        });
+
+        noResults.hidden = shown > 0;
+    }
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            filterButtons.forEach(function (b) { b.classList.remove("active"); });
+            button.classList.add("active");
+            activeFilter = button.dataset.filter;
+            applyFilters();
+        });
+    });
+
+    searchInput.addEventListener("input", applyFilters);
+}
+
+    

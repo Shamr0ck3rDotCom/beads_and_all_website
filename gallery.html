@@ -29,49 +29,61 @@
 
         <!-- Page intro image + heading -->
         <section class="page-header">
-            <!-- Update the alt text so it describes what is actually in this photo -->
             <img src="images/woman-with-prayer-beads-hero.jpeg" alt="A woman sitting with handmade prayer beads">
             <h1>Gallery</h1>
             <p>A look at some of our past custom pieces.</p>
         </section>
 
+        <!-- Search and filter -->
+        <section class="gallery-controls">
+            <input type="search" id="gallerySearch" placeholder="Search the gallery, e.g. gold" aria-label="Search the gallery">
+            <div class="filter-buttons">
+                <button type="button" class="filter-btn active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="earrings">Earrings</button>
+                <button type="button" class="filter-btn" data-filter="prayer-beads">Prayer beads</button>
+                <button type="button" class="filter-btn" data-filter="bangles">Bangles</button>
+                <button type="button" class="filter-btn" data-filter="bookmarkers">Bookmarkers</button>
+                <button type="button" class="filter-btn" data-filter="other">Other</button>
+            </div>
+            <p id="noResults" hidden>No pieces match your search.</p>
+        </section>
+
         <!-- Gallery grid: 12 images of past work -->
         <section class="gallery-grid">
-            <figure>
+            <figure data-category="earrings">
                 <img class="gallery-img" src="images/orange-cream-beaded-earrings.jpeg" loading="lazy" alt="Beaded earrings in orange and cream">
             </figure>
-            <figure>
+            <figure data-category="bangles">
                 <img class="gallery-img" src="images/black-gold-beaded-bracelet.jpg" loading="lazy" alt="Beaded bracelet with black and gold beads">
             </figure>
-            <figure>
+            <figure data-category="prayer-beads">
                 <img class="gallery-img" src="images/palestine-colour-prayer-beads.webp" loading="lazy" alt="Palestine colour prayer beads with a tassel">
             </figure>
-            <figure>
+            <figure data-category="bookmarkers">
                 <img class="gallery-img" src="images/black-red-beaded-bookmarker.jpeg" loading="lazy" alt="Beaded bookmarker in red and black">
             </figure>
-            <figure>
+            <figure data-category="earrings">
                 <img class="gallery-img" src="images/black-beaded-drop-earrings.jpg" loading="lazy" alt="Pair of drop earrings with black beads">
             </figure>
-            <figure>
+            <figure data-category="bangles">
                 <img class="gallery-img" src="images/pastel-beaded-bracelets.webp" loading="lazy" alt="Stack of beaded bracelets in pastel colours">
             </figure>
-            <figure>
+            <figure data-category="other">
                 <img class="gallery-img" src="images/beaded-choker-necklace.webp" loading="lazy" alt="Handmade beaded choker necklace">
             </figure>
-            <figure>
+            <figure data-category="other">
                 <img class="gallery-img" src="images/custom-beaded-keychain.webp" loading="lazy" alt="Custom beaded keychain">
             </figure>
-            <figure>
+            <figure data-category="earrings">
                 <img class="gallery-img" src="images/beaded-hoop-earrings.jpeg" loading="lazy" alt="Beaded hoop earrings">
             </figure>
-            <figure>
+            <figure data-category="prayer-beads">
                 <img class="gallery-img" src="images/dark-wood-prayer-beads.webp" loading="lazy" alt="Prayer beads in dark wood">
             </figure>
-            <figure>
-                <!-- TODO: this was a duplicate of the bookmarker above. Swap in a different photo and a matching alt -->
+            <figure data-category="bookmarkers">
                 <img class="gallery-img" src="images/beaded-bookmarker.webp" loading="lazy" alt="Beaded bookmarker">
             </figure>
-            <figure>
+            <figure data-category="other">
                 <img class="gallery-img" src="images/gold-brass-pearl-handchain.avif" loading="lazy" alt="Gold and brass handchain with pearls">
             </figure>
         </section>
@@ -94,6 +106,15 @@
         <p>&copy; 2026 Beads &amp; All. All rights reserved.</p>
     </footer>
 
-    <script src="js/main.js" defer></script>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+        <img id="lightboxImg" src="" alt="">
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+
+        <script src="js/main.js" defer></script>
 </body>
 </html>
