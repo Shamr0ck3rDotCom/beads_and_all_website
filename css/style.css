@@ -987,3 +987,33 @@ footer p{
     padding: 0 1.2rem 1.2rem 1.2rem;
     color: var(--beige-soft);
 }
+
+/* ===== Animations ===== */
+
+/* Hero text fades up when the page loads (pure CSS) */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-text {
+    animation: fadeUp 1s ease both;
+}
+
+/* Scroll reveal: JavaScript adds these classes */
+body .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+body .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Respect visitors who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+    .hero-text { animation: none; }
+    body .reveal { opacity: 1; transform: none; transition: none; }
+}

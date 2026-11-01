@@ -253,4 +253,35 @@ accordionHeaders.forEach(function (header) {
     });
 });
 
+// ===== Scroll reveal animation =====
+const revealTargets = document.querySelectorAll(
+    ".featured-work figure, .about-snippet, .cta, .company-history, " +
+    ".services-grid article, .gallery-grid figure, .faq, .contact-info"
+);
+
+if ("IntersectionObserver" in window && revealTargets.length > 0) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+
+            const el = entry.target;
+            el.classList.add("visible");
+            observer.unobserve(el);   // only animate once
+
+            // Once finished, remove the classes so hover effects work normally
+            setTimeout(function () {
+                el.classList.remove("reveal", "visible");
+                el.style.transitionDelay = "";
+            }, 1000);
+        });
+    }, { threshold: 0.15 });
+
+    revealTargets.forEach(function (el, index) {
+        el.classList.add("reveal");
+        // Small stagger so grid items appear one after another
+        el.style.transitionDelay = (index % 4) * 100 + "ms";
+        observer.observe(el);
+    });
+}
+
     
