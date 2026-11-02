@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shamr0ck3rdotcom.github.io/beads_and_all_website/sitemap.xml
