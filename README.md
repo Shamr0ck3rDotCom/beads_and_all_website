@@ -11,7 +11,7 @@ A responsive website for **Beads & All**, a home-based handmade beaded jewellery
 | **Institution** | The IIE's Rosebank College |
 | **Module** | WEDE5020w: Web Development Introduction |
 | **Lecturer** | Morne Coetzee |
-| **Live site** |  |
+| **Live site** |https://shamr0ck3rdotcom.github.io/beads_and_all_website/|
 | **Repository** | https://github.com/Shamr0ck3rDotCom/beads_and_all_website.git |
 
 ## Project overview
