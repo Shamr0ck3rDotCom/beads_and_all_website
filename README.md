@@ -80,7 +80,7 @@ beads-and-all/
 
 ## Running the site locally
 
-1. Clone the repository: `git clone [your repo link]`
+1. Clone the repository: `git clone [git clone https://github.com/Shamr0ck3rDotCom/beads_and_all_website.git]`
 2. Open the folder in VS Code.
 3. Right-click `index.html` and choose **Open with Live Server**.
 
@@ -103,13 +103,13 @@ beads-and-all/
 - Added FAQ accordion on the enquiry page
 - Added Leaflet interactive map on the contact page
 - Added hero and scroll-reveal animations
-- Deployed the site to [Netlify / GitHub Pages]
+- Deployed the site to GitHub Pages
 
 ### Part 2: CSS and responsive design
 - Applied the dark, luxury theme using CSS variables
 - Styled all five pages with Grid and Flexbox
 - Added tablet and mobile breakpoints
-- **Feedback addressed:** [add the feedback you received on Part 2 and what you changed]
+- **Feedback addressed:** [Added README, added detailed commits]
 
 ### Part 1: Planning and HTML
 - Created wireframes and sitemap for five pages
@@ -122,8 +122,6 @@ beads-and-all/
 - OpenStreetMap contributors. *OpenStreetMap*. https://www.openstreetmap.org
 - Google Fonts. *Playfair Display* and *Open Sans*. https://fonts.google.com
 - MDN Web Docs. *IntersectionObserver*, *Element.classList*, *ARIA: aria-expanded* and *Window.location*. https://developer.mozilla.org
-- [Add your images' sources: where each photo came from, for example the owner's own photos, or the website name and URL for any others]
-- [Add any other sources you used]
 
 ## Image credits
 
