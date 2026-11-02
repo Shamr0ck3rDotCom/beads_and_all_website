@@ -48,7 +48,7 @@ a{
 
 img{
     max-width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
 }
 
@@ -63,6 +63,7 @@ header{
     position: sticky;
     top: 0;
     z-index: 10;
+    transition: background .3s ease, border-color .3s ease;
 }
 
 .logo a{
@@ -1016,4 +1017,95 @@ body .reveal.visible {
 @media (prefers-reduced-motion: reduce) {
     .hero-text { animation: none; }
     body .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== Full-page background images (all pages) ===== */
+
+/* Subpage banners: About, Gallery, Enquiry, Contact */
+body.bg-page .page-header img {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(0.28) sepia(0.15);
+    z-index: -2;
+}
+
+body.bg-page .page-header::after {
+    display: none;
+}
+
+/* Homepage hero: the image becomes the page background too */
+body.bg-page .hero img {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(0.3) sepia(0.15);
+    z-index: -2;
+}
+
+body.bg-page .hero::after {
+    display: none;
+}
+
+/* Dark panels so content stays readable over the photo */
+body.bg-page .featured-work,
+body.bg-page .company-history,
+body.bg-page .services,
+body.bg-page .gallery-controls,
+body.bg-page .gallery-grid,
+body.bg-page .enquiry-form,
+body.bg-page .contact-form,
+body.bg-page .faq {
+    background: rgba(20, 16, 13, 0.78);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-block: 2rem;
+}
+
+/* The controls and grid are separate panels, so join them visually */
+body.bg-page .gallery-controls {
+    margin-bottom: 0;
+    border-bottom: none;
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding-bottom: 1.5rem;
+}
+
+body.bg-page .gallery-grid {
+    margin-top: 0;
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+/* Spacing for the form panels */
+body.bg-page .enquiry-form,
+body.bg-page .contact-form,
+body.bg-page .faq {
+    padding: 2rem 1.5rem;
+}
+
+@media (max-width: 1160px) {
+    body.bg-page .featured-work,
+    body.bg-page .company-history,
+    body.bg-page .services,
+    body.bg-page .gallery-controls,
+    body.bg-page .gallery-grid,
+    body.bg-page .enquiry-form,
+    body.bg-page .contact-form,
+    body.bg-page .faq {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body.bg-page .enquiry-form,
+    body.bg-page .contact-form,
+    body.bg-page .faq {
+        padding: 1.5rem 1rem;
+    }
 }
